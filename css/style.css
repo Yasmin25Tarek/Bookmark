@@ -1,0 +1,61 @@
+body{
+    background-color: #F7ECDE;
+}
+.bookmark-body{
+    border-bottom: 2px dotted black;
+    border-top: 2px dotted black;
+}
+h1{
+    font-family: "Pacifico", cursive;
+    font-weight: 500;
+    font-size: 50px;
+    position: relative;
+}
+h1::before{
+    content: "";
+    position: absolute;
+    background-color: #FEC260;
+    width: 270px;
+    top: 40px;
+    bottom: 0;
+    z-index: -1;
+    transition-duration: .5s;
+}
+h1:hover::before{
+    top: 20px;
+}
+h2{
+     font-family: "Righteous", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  background: linear-gradient(45deg, #40A55C, #b2ac4a);
+  background-clip: text;
+  color: transparent;
+  
+}
+#submit{
+    color: white;
+    border: 1px solid;
+    background-color: #c44d2b;
+}
+#submit:hover{
+    background-color: #BB4120;
+    
+}
+.btn-visit{
+    background-color: yellowgreen;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.btn-visit a{
+    color: white;
+    text-decoration: none;
+}
+.btn-delete{
+    background-color: red;
+    color: white;
+    border: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
