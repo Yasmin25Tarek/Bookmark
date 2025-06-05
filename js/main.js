@@ -12,12 +12,28 @@ function addSite(){
         Name: inputName.value,
         Url : inputUrl.value,
     };
+    if (!site.Name || !site.Url) {
+    alert('Please fill in all fields!');
+    return;
+    }
+    
+    if (!isValidUrl(site.Url)) {
+    alert('The link is invalid. Please enter a valid link.');
+    return;
+    }
     allSite.push(site);
     localStorage.setItem("allinfo",JSON.stringify(allSite));
     clearform()
     displayUrlSite(allSite);
 }
-
+function isValidUrl(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
 function clearform() {
     inputName.value = "",
     inputUrl.value = ""
@@ -37,7 +53,7 @@ function displayUrlSite(list) {
 }
 function deletesite(deleteindex){
     allSite.splice(deleteindex, 1);
-    console.log(allSite);
+    localStorage.setItem("allinfo",JSON.stringify(allSite));
     displayUrlSite(allSite)
 
 }
